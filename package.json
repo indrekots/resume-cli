@@ -1,0 +1,15 @@
+{
+  "name": "resume-cli",
+  "version": "0.0.1",
+  "description": "Commanline tool for generating a PDF or HTML resume.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "resume"
+  ],
+  "author": "Indrek Ots <ots.indrek@gmail.com> (http://blog.indrek.io)",
+  "license": "MIT"
+}
