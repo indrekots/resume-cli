@@ -11,5 +11,8 @@
     "resume"
   ],
   "author": "Indrek Ots <ots.indrek@gmail.com> (http://blog.indrek.io)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.3.6"
+  }
 }
