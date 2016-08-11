@@ -1,5 +1,6 @@
 var fs = require("fs");
 var marked = require("marked");
+var markdownpdf = require("markdown-pdf");
 
 var inputFile = process.argv[2];
 
@@ -9,3 +10,6 @@ fs.writeFile("resume.html", htmlOutput, function(err) {
   console.log("resume.html created");
 });
 
+markdownpdf().from(inputFile).to("resume.pdf", function() {
+  console.log("resume.pdf created");
+});
