@@ -15,5 +15,9 @@
   "dependencies": {
     "markdown-pdf": "^7.0.0",
     "marked": "^0.3.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:indrekots/resume-cli.git"  
   }
 }
