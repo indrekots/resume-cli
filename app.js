@@ -1,15 +1,9 @@
 var fs = require("fs");
-var marked = require("marked");
 var markdownpdf = require("markdown-pdf");
+var htmlWriter = require("./htmlWriter.js");
 
 var inputFile = process.argv[2];
-
-var htmlOutput = marked(fs.readFileSync(inputFile, 'utf8'));
-fs.writeFile("resume.html", htmlOutput, function(err) {
-  if (err) throw err;
-  console.log("resume.html created");
-});
-
+htmlWriter.write(inputFile, "resume.html");
 markdownpdf().from(inputFile).to("resume.pdf", function() {
   console.log("resume.pdf created");
 });
