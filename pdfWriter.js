@@ -1,9 +1,9 @@
-var markdownpdf = require("markdown-pdf");
+var markdownpdf = require('markdown-pdf');
 
 var write = function(inputFile, outFile) {
-  outFile = outFile || "resume.pdf";
+  outFile = outFile + '.pdf' || 'resume.pdf';
   markdownpdf().from(inputFile).to(outFile, function() {
-    console.log(outFile + " created");
+    console.log(outFile + ' created');
   });
 }
 
