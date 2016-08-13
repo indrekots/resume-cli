@@ -7,8 +7,12 @@ var argv = require('yargs')
   .demand('i', 'Specify path to the file which contains resume content in markdown')
   .nargs('i', 1)
   .describe('i', 'Resume content in markdown')
+  .alias('o', 'output')
+  .nargs('o', 1)
+  .describe('o', 'Output file name without file extension, if missing, output is written to "resume.html" and/or "resume.pdf"')
   .argv;
 
 var inputFile = argv.input;
-htmlWriter.write(inputFile, 'resume.html');
-pdfWriter.write(inputFile, 'resume.pdf');
+var outputFile = argv.output || 'resume';
+htmlWriter.write(inputFile, outputFile);
+pdfWriter.write(inputFile, outputFile);
