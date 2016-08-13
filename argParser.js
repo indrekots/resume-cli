@@ -8,6 +8,9 @@ var argv = require('yargs')
   .alias('o', 'output')
   .nargs('o', 1)
   .describe('o', 'Output file name without file extension, if missing, output is written to "resume.html" and/or "resume.pdf"')
+  .describe('html', 'Generate HTML output')
+  .describe('pdf', 'Generate PDF output')
+  .describe('all', 'Generate HTML and PDF output')
   .argv;
 
 module.exports = argv;

@@ -5,5 +5,12 @@ var argv = require('./argParser.js');
 var inputFile = argv.input;
 var outputFile = argv.output || 'resume';
 
-htmlWriter.write(inputFile, outputFile);
-pdfWriter.write(inputFile, outputFile);
+var notSpecified = !argv.html && !argv.pdf && !argv.all;
+
+if (notSpecified || argv.html || argv.all) {
+  htmlWriter.write(inputFile, outputFile);
+}
+
+if (notSpecified || argv.pdf || argv.all) {
+  pdfWriter.write(inputFile, outputFile);
+}
