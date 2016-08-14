@@ -1,6 +1,8 @@
 var argv = require('yargs')
   .usage('Usage: $0 [options]')
   .example('$0 -i resume.md', 'Reads resume.md and generates an HTML and PDF doucment containing the resume content') 
+  .example('$0 -i resume.md --html', 'Reads resume.md and generates an HTML document from it')
+  .example('$0 -i resume.md --pdf', 'Reads resume.md and generates a PDF document from it')
   .alias('i', 'input')
   .demand('i', 'Specify path to the file which contains resume content in markdown')
   .nargs('i', 1)
