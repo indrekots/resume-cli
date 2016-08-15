@@ -1,6 +1,6 @@
 var pdfWriter = require('./pdfWriter.js');
 var fs = require('fs');
-var html = require('./html.js');
+var html = require('./htmlWriter.js');
 var parse = require('markdown-parse');
 var argv = require('./argParser.js');
 
@@ -12,7 +12,7 @@ var notSpecified = !argv.html && !argv.pdf && !argv.all;
 var content = fs.readFileSync(inputFile, 'utf8');
 parse(content, function(err, result) {
   if (notSpecified || argv.html || argv.all) {
-    html.write(result.html, outputFile);
+    html.write(result, outputFile);
   }
 
   if (notSpecified || argv.pdf || argv.all) {
