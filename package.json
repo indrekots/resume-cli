@@ -13,6 +13,8 @@
   "author": "Indrek Ots <ots.indrek@gmail.com> (http://blog.indrek.io)",
   "license": "MIT",
   "dependencies": {
+    "html-pdf": "^2.0.1",
+    "markdown-parse": "^0.2.1",
     "markdown-pdf": "^7.0.0",
     "marked": "^0.3.6",
     "optimist": "^0.6.1",

@@ -1,3 +1,14 @@
+---
+name: Indrek Ots
+email: ots.indrek@gmail.com
+links:
+  - url: http://blog.indrek.io
+    type: blog
+  - url: https://github.com/indrekots
+    type: github
+  - url: https://www.linkedin.com/in/indrekots
+    type: linkedin
+---
 Indrek Ots
 ===============
 
