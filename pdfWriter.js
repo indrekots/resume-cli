@@ -1,8 +1,8 @@
-var pdf = require('html-pdf');
+var pdf = require('html5-to-pdf');
 
 var write = function(content, outFile) {
   outFile = outFile + '.pdf' || 'resume.pdf';
-  pdf.create(content).toFile(outFile, function(err, res) {
+  pdf({cssPath: 'test.css'}).from.string(content).to(outFile, function() {
     console.log(outFile + " created");
   });
 }
