@@ -3,6 +3,7 @@ var argv = require('yargs')
   .example('$0 -i resume.md', 'Reads resume.md and generates an HTML and PDF doucment containing the resume content') 
   .example('$0 -i resume.md --html', 'Reads resume.md and generates an HTML document from it')
   .example('$0 -i resume.md --pdf', 'Reads resume.md and generates a PDF document from it')
+  .example('$0 -i resume.md --template templates/default', 'Reads resume.md and generates HTML and PDF output based on template found in "templates/default"')
   .alias('i', 'input')
   .demand('i', 'Specify path to the file which contains resume content in markdown')
   .nargs('i', 1)
@@ -13,6 +14,9 @@ var argv = require('yargs')
   .describe('html', 'Generate HTML output')
   .describe('pdf', 'Generate PDF output')
   .describe('all', 'Generate HTML and PDF output')
+  .alias('t', 'template')
+  .nargs('t', 1)
+  .describe('t', 'Template name, if missing, templates/default will be used')
   .argv;
 
 module.exports = argv;
