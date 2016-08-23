@@ -1,14 +1,20 @@
 var fs = require('fs');
 
-var write = function(content, outFile) {
-  outFile = outFile + '.html' || 'resume.html';
-  var template = fs.readFileSync('./templates/default/default/default.html', 'utf8');
-  template = template.replace('{{name}}', content.attributes.name);
-  template = template.replace('{{mainContent}}', content.html);
-  fs.writeFile(outFile, template, function(err) {
+var write = function(opt) {
+  initOptions(opt);
+  var template = fs.readFileSync(opt.template, 'utf8');
+  template = template.replace('{{name}}', opt.content.attributes.name);
+  template = template.replace('{{mainContent}}', opt.content.html);
+  fs.writeFile(opt.outFile, template, function(err) {
     if (err) throw err;
-    console.log(outFile + ' created');
+    console.log(opt.outFile + ' created');
   });
+  
+  function initOptions(options) {
+    options.outFile = options.outFile + '.html' || 'resume.html';
+    options.content = options.content || {};
+    options.template = options.template || './templates/default/default.html';
+  }
 }
 
 module.exports.write = write;
