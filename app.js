@@ -12,7 +12,11 @@ var notSpecified = !argv.html && !argv.pdf && !argv.all;
 var content = fs.readFileSync(inputFile, 'utf8');
 parse(content, function(err, result) {
   if (notSpecified || argv.html || argv.all) {
-    html.write({content: result, outFile: outputFile});
+    html.write({
+      content: result, 
+      outFile: outputFile,
+      template: argv.template 
+    });
   }
 
   if (notSpecified || argv.pdf || argv.all) {

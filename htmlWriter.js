@@ -13,7 +13,7 @@ var write = function(opt) {
   function initOptions(options) {
     options.outFile = options.outFile + '.html' || 'resume.html';
     options.content = options.content || {};
-    options.template = options.template || './templates/default/default.html';
+    options.template = (options.template || './templates/default') + '/index.html';
   }
 }
 
